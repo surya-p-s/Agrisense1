@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "322821975681",
+    "firebase_url": "https://agrisenes-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "agrisenes",
+    "storage_bucket": "agrisenes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:322821975681:android:8873391885b8dab5312780",
+        "android_client_info": {
+          "package_name": "com.example.agrisense"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfSsbqjMfBIokmhhsa-zzQkmjB0i5XaMI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:322821975681:android:699a48d2ea72d333312780",
+        "android_client_info": {
+          "package_name": "com.example.marinesoftapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfSsbqjMfBIokmhhsa-zzQkmjB0i5XaMI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

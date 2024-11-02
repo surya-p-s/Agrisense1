@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:src="@drawable/img"/>
+
+    <TextView
+        android:layout_width="145dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/logo"
+        android:fontFamily="@font/aladin"
+        android:letterSpacing="0.05"
+        android:padding="5dp"
+        android:text="@string/marinesoft"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:text="@string/Empowering_farmers_through_technology"
+        android:padding="6dp"
+        android:textSize="15sp"
+        android:textStyle="bold|italic"/>
+
+</LinearLayout>
