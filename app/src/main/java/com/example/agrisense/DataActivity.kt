@@ -121,7 +121,7 @@ class DataActivity : AppCompatActivity() {
 // Switch toggle setup
             air= findViewById(R.id.switch1)
             pump = findViewById(R.id.switch2)
-            light = findViewById(R.id.switch4)
+            light = findViewById(R.id.switch3)
 
 
 
@@ -130,13 +130,33 @@ class DataActivity : AppCompatActivity() {
 
 
 // Set listener to update Firebase when the switch is toggled
+            air.setOnCheckedChangeListener { _, isChecked ->
+                if (isChecked) {
+                    // Switch is ON, send value "1" to Firebase
+                    sendairSwitchDataToFirebase(1)
+                } else {
+                    // Switch is OFF, send value "0" to Firebase
+                    sendairSwitchDataToFirebase(0)
+                }
+            }
+
             pump.setOnCheckedChangeListener { _, isChecked ->
                 if (isChecked) {
                     // Switch is ON, send value "1" to Firebase
-                    sendSwitchDataToFirebase(1)
+                    sendpumpSwitchDataToFirebase(1)
                 } else {
                     // Switch is OFF, send value "0" to Firebase
-                    sendSwitchDataToFirebase(0)
+                    sendpumpSwitchDataToFirebase(0)
+                }
+            }
+
+            light.setOnCheckedChangeListener { _, isChecked ->
+                if (isChecked) {
+                    // Switch is ON, send value "1" to Firebase
+                    sendlightSwitchDataToFirebase(1)
+                } else {
+                    // Switch is OFF, send value "0" to Firebase
+                    sendlightSwitchDataToFirebase(0)
                 }
             }
         }
@@ -158,9 +178,25 @@ class DataActivity : AppCompatActivity() {
             Toast.makeText(this, "Failed to get switch state", Toast.LENGTH_SHORT).show()
         }
     }
-    private fun sendSwitchDataToFirebase(value: Int) {
+    private fun sendairSwitchDataToFirebase(value: Int) {
+        // Send switch state (1 or 0) to Firebase
+        database.child("air").setValue(value).addOnSuccessListener {
+            Toast.makeText(this, "Switch state updated", Toast.LENGTH_SHORT).show()
+        }.addOnFailureListener {
+            Toast.makeText(this, "Failed to update switch state", Toast.LENGTH_SHORT).show()
+        }
+    }
+    private fun sendpumpSwitchDataToFirebase(value: Int) {
         // Send switch state (1 or 0) to Firebase
         database.child("pump").setValue(value).addOnSuccessListener {
+            Toast.makeText(this, "Switch state updated", Toast.LENGTH_SHORT).show()
+        }.addOnFailureListener {
+            Toast.makeText(this, "Failed to update switch state", Toast.LENGTH_SHORT).show()
+        }
+    }
+    private fun sendlightSwitchDataToFirebase(value: Int) {
+        // Send switch state (1 or 0) to Firebase
+        database.child("light").setValue(value).addOnSuccessListener {
             Toast.makeText(this, "Switch state updated", Toast.LENGTH_SHORT).show()
         }.addOnFailureListener {
             Toast.makeText(this, "Failed to update switch state", Toast.LENGTH_SHORT).show()
@@ -170,7 +206,7 @@ class DataActivity : AppCompatActivity() {
 
 //    function to update switch status manually
 
-
+//
 //    private fun updateSwitchStatus(isOn: Boolean) {
 //        pump.isChecked = isOn
 //    }

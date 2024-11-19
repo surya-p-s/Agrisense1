@@ -215,7 +215,7 @@
             tools:layout_editor_absoluteY="299dp">
 
             <TextView
-                android:layout_width="130dp"
+                android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_gravity="bottom"
                 android:background="@color/white"
@@ -225,15 +225,6 @@
                 android:textColor="@color/black"
                 tools:layout_editor_absoluteX="46dp"
                 tools:layout_editor_absoluteY="268dp" />
-
-            <androidx.appcompat.widget.SwitchCompat
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_gravity="end|bottom"
-                android:background="@color/white"
-                android:padding="10dp"
-                android:textSize="20sp"
-                tools:ignore="UseSwitchCompatOrMaterialXml" />
 
             <TextView
                 android:id="@+id/textView8"
@@ -270,7 +261,7 @@
                 tools:layout_editor_absoluteY="268dp" />
 
             <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/switch4"
+                android:id="@+id/switch3"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_gravity="end|bottom"
