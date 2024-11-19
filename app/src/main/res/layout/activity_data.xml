@@ -63,23 +63,23 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.appcompat.widget.Toolbar>
 
-    <EditText
-        android:id="@+id/editTextText2"
-        android:layout_width="271dp"
-        android:layout_height="71dp"
-        android:layout_margin="5dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="16dp"
-        android:autofillHints="No"
-        android:ems="10"
-        android:gravity="bottom"
-        android:inputType="text"
-        android:text="@string/crop_name"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-        app:layout_constraintEnd_toStartOf="@+id/button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        tools:ignore="LabelFor" />
+<!--    <EditText-->
+<!--        android:id="@+id/editTextText2"-->
+<!--        android:layout_width="271dp"-->
+<!--        android:layout_height="71dp"-->
+<!--        android:layout_margin="5dp"-->
+<!--        android:layout_marginTop="12dp"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        android:autofillHints="No"-->
+<!--        android:ems="10"-->
+<!--        android:gravity="bottom"-->
+<!--        android:inputType="text"-->
+<!--        android:text="@string/crop_name"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/button"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/toolbar"-->
+<!--        tools:ignore="LabelFor" />-->
 
     <Button
         android:id="@+id/button"
@@ -92,7 +92,7 @@
         android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editTextText2"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
