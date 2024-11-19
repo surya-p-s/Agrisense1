@@ -1,8 +1,5 @@
 package com.example.agrisense
 
-
-
-
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -15,6 +12,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+
 class DataActivity : AppCompatActivity() {
 
 
@@ -126,7 +124,7 @@ class DataActivity : AppCompatActivity() {
 
 
 // Initialize the switch based on the current data in the Firebase database
-//            initializeSwitch()
+            initializeSwitch()
 
 
 // Set listener to update Firebase when the switch is toggled
@@ -171,9 +169,21 @@ class DataActivity : AppCompatActivity() {
     }
     private fun initializeSwitch() {
         // Optional: Get the current switch value from Firebase and set the switch state accordingly
+        database.child("air").get().addOnSuccessListener { dataSnapshot ->
+            val switchValue = dataSnapshot.value as? Int ?: 0
+            air.isChecked = switchValue == 0
+        }.addOnFailureListener {
+            Toast.makeText(this, "Failed to get switch state", Toast.LENGTH_SHORT).show()
+        }
         database.child("pump").get().addOnSuccessListener { dataSnapshot ->
             val switchValue = dataSnapshot.value as? Int ?: 0
             pump.isChecked = switchValue == 0
+        }.addOnFailureListener {
+            Toast.makeText(this, "Failed to get switch state", Toast.LENGTH_SHORT).show()
+        }
+        database.child("light").get().addOnSuccessListener { dataSnapshot ->
+            val switchValue = dataSnapshot.value as? Int ?: 0
+            light.isChecked = switchValue == 0
         }.addOnFailureListener {
             Toast.makeText(this, "Failed to get switch state", Toast.LENGTH_SHORT).show()
         }
@@ -205,22 +215,13 @@ class DataActivity : AppCompatActivity() {
 
 
 //    function to update switch status manually
-
-//
 //    private fun updateSwitchStatus(isOn: Boolean) {
 //        pump.isChecked = isOn
 //    }
-
-
-
 
     private fun updateUI(){
         val intent= Intent(this,SignInPage::class.java)
         startActivity(intent)
         finish()
     }
-
-
-
-
 }
