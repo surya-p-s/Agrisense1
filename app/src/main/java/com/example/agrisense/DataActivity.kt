@@ -59,7 +59,7 @@ class DataActivity : AppCompatActivity() {
                     val id = snapshot.child("id").value.toString()
 
 
-                    initializeSwitch()
+//                    initializeSwitch()
                     // Update the TextViews with the retrieved values
                     tvhumidity.text = humidity
                     if(humidity.toInt() < 20){
@@ -124,7 +124,7 @@ class DataActivity : AppCompatActivity() {
 
 
 // Initialize the switch based on the current data in the Firebase database
-            initializeSwitch()
+//            initializeSwitch()
 
 
 // Set listener to update Firebase when the switch is toggled
@@ -167,27 +167,31 @@ class DataActivity : AppCompatActivity() {
 
 
     }
-    private fun initializeSwitch() {
-        // Optional: Get the current switch value from Firebase and set the switch state accordingly
-        database.child("air").get().addOnSuccessListener { dataSnapshot ->
-            val switchValue = dataSnapshot.value as? Int ?: 0
-            air.isChecked = switchValue == 0
-        }.addOnFailureListener {
-            Toast.makeText(this, "Failed to get switch state", Toast.LENGTH_SHORT).show()
-        }
-        database.child("pump").get().addOnSuccessListener { dataSnapshot ->
-            val switchValue = dataSnapshot.value as? Int ?: 0
-            pump.isChecked = switchValue == 0
-        }.addOnFailureListener {
-            Toast.makeText(this, "Failed to get switch state", Toast.LENGTH_SHORT).show()
-        }
-        database.child("light").get().addOnSuccessListener { dataSnapshot ->
-            val switchValue = dataSnapshot.value as? Int ?: 0
-            light.isChecked = switchValue == 0
-        }.addOnFailureListener {
-            Toast.makeText(this, "Failed to get switch state", Toast.LENGTH_SHORT).show()
-        }
-    }
+
+//
+//    private fun initializeSwitch() {
+//        // Optional: Get the current switch value from Firebase and set the switch state accordingly
+//        database.child("air").get().addOnSuccessListener { dataSnapshot ->
+//            val switchValue = dataSnapshot.value as? Int ?: 0
+//            air.isChecked = switchValue == 0
+//        }.addOnFailureListener {
+//            Toast.makeText(this, "Failed to get switch state", Toast.LENGTH_SHORT).show()
+//        }
+//        database.child("pump").get().addOnSuccessListener { dataSnapshot ->
+//            val switchValue = dataSnapshot.value as? Int ?: 0
+//            pump.isChecked = switchValue == 0
+//        }.addOnFailureListener {
+//            Toast.makeText(this, "Failed to get switch state", Toast.LENGTH_SHORT).show()
+//        }
+//        database.child("light").get().addOnSuccessListener { dataSnapshot ->
+//            val switchValue = dataSnapshot.value as? Int ?: 0
+//            light.isChecked = switchValue == 0
+//        }.addOnFailureListener {
+//            Toast.makeText(this, "Failed to get switch state", Toast.LENGTH_SHORT).show()
+//        }
+//    }
+//
+//
     private fun sendairSwitchDataToFirebase(value: Int) {
         // Send switch state (1 or 0) to Firebase
         database.child("air").setValue(value).addOnSuccessListener {
